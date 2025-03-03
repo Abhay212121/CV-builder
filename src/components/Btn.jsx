@@ -1,6 +1,8 @@
-function Btn({ btnText }) {
+function Btn({ btnText, doFunc }) {
+
+
     return (
-        <button className="border-2 px-3 py-1 rounded-lg">{btnText}
+        <button className="border-2 px-3 py-1 rounded-lg" onClick={doFunc}>{btnText}
         </button>
     )
 }
