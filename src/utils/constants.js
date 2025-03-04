@@ -1,5 +1,5 @@
 const personalData = {
-    name: 'Abhay', email: 'abhay.work.02@gmail.com', phone: '+91 9971119813', github: 'github.com/Abhay212121', linkedin: 'linkedin.com/in/abhay-sharma2121'
+    name: 'Abhay Sharma', email: 'abhay.work.02@gmail.com', phone: '+91 9971119813', github: 'github.com/Abhay212121', linkedin: 'linkedin.com/in/abhay-sharma2121'
 }
 
 const educationData = [

@@ -14,8 +14,11 @@ function Sidebar({ personalData, setPersonalData, educationData, setEducationDat
 
 
             <Section sectionHeading={'Education'} sectionFormData={educationData} setSectionFormData={setEducationData} />
+
             <Section sectionHeading={'Experience'} sectionFormData={experienceData} setSectionFormData={setExperienceData} />
             <Section sectionHeading={'Projects'} sectionFormData={projectData} setSectionFormData={setProjectData} />
+
+
             {/* <Section sectionHeading={'Technical Skills'} sectionFormData={educationData} setSectionFormData={setEducationData} /> */}
         </div>
     )
