@@ -1,8 +1,12 @@
 import Icon from "@mdi/react";
 import { mdiChevronDown, mdiCloseCircleOutline } from "@mdi/js";
 import { useState } from "react";
-import Btn from "./Btn";
-import { newEmptyEducationData } from "../utils/constants";
+import { Btn } from "./Btn";
+import {
+  newEducationData,
+  newExperienceData,
+  newProjectData,
+} from "../utils/constants";
 
 export default function Section({
   sectionHeading,
@@ -11,13 +15,22 @@ export default function Section({
 }) {
   const [isActive, setIsActive] = useState(false);
 
-  function handleChange(dir) {
-    setSectionFormData(sectionFormData.filter((item) => item != dir));
+  function handleChange(obj) {
+    setSectionFormData((prev) => prev.filter((item) => item != obj));
   }
 
-  function handleAddMore() {
-    setSectionFormData(sectionFormData.push(newEmptyEducationData));
-    console.log(sectionFormData);
+  function handleAddMore(heading) {
+    if (heading === "Education") {
+      setSectionFormData((prev) => prev.push(newEducationData));
+    }
+
+    if (heading === "Experience") {
+      setSectionFormData((prev) => prev.push(newExperienceData));
+    }
+
+    if (heading === "Projects") {
+      setSectionFormData((prev) => prev.push(newProjectData));
+    }
   }
 
   return (
@@ -35,6 +48,7 @@ export default function Section({
       </div>
       {isActive && (
         <div className="flex flex-col items-start text-xl">
+          {console.log(sectionFormData)}
           {sectionFormData.map((data, index) => {
             return (
               <div
@@ -76,7 +90,11 @@ export default function Section({
             );
           })}
           <div className="m-auto pb-8 text-blue-700">
-            <Btn btnText={"Add more"} sectionHeading={sectionHeading} />
+            <Btn
+              btnText={"Add more"}
+              heading={sectionHeading}
+              doFunc={handleAddMore}
+            />
           </div>
         </div>
       )}

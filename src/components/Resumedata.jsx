@@ -14,7 +14,7 @@ function ResumeData({
           </h1>
           <div className="flex gap-2 text-lg">
             <span>{personalData.phone}</span>
-            <span>|</span>
+            {personalData.phone == "" ? null : <span>|</span>}
             <span className="underline hover:cursor-pointer">
               {personalData.email}
             </span>
@@ -23,7 +23,7 @@ function ResumeData({
             <span className="underline hover:cursor-pointer">
               {personalData.linkedin}
             </span>
-            <span>|</span>
+            {personalData.linkedin == "" ? null : <span>|</span>}
             <span className="underline hover:cursor-pointer">
               {personalData.github}
             </span>

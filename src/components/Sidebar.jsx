@@ -1,11 +1,15 @@
-import Btn from "./Btn";
+import { Btn } from "./Btn";
 import Personalsection from "./Personalsection";
 import Section from "./Section";
 import {
   newPersonalData,
-  newEmptyEducationData,
+  newEducationData,
   newExperienceData,
   newProjectData,
+  projectData as dummyProjectData,
+  educationData as dummyEducationData,
+  personalData as dummyPersonalData,
+  experienceData as dummyExperienceData,
 } from "../utils/constants";
 
 function Sidebar({
@@ -20,9 +24,16 @@ function Sidebar({
 }) {
   function handleNewCV() {
     setPersonalData(newPersonalData),
-      setEducationData(newEmptyEducationData),
+      setEducationData(newEducationData),
       setExperienceData(newExperienceData),
       setProjectData(newProjectData);
+  }
+
+  function handleLoadCV() {
+    setPersonalData(dummyPersonalData),
+      setEducationData(dummyEducationData),
+      setExperienceData(dummyExperienceData),
+      setProjectData(dummyProjectData);
   }
 
   return (
@@ -30,7 +41,7 @@ function Sidebar({
       <h2 className="text-4xl text-red-800 underline">Build your Resume!</h2>
       <div className="flex w-2/3 place-content-evenly text-xl text-red-900">
         <Btn btnText={"New CV"} doFunc={handleNewCV} />
-        <Btn btnText={"Load CV"} />
+        <Btn btnText={"Sample CV"} doFunc={handleLoadCV} />
       </div>
       <Personalsection
         sectionHeading={"Personal Information"}

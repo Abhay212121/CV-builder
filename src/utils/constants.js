@@ -21,13 +21,24 @@ const projectData = [
 ]
 
 const newPersonalData = {
-    name: '', email: '', phone: '+91 ', github: '', linkedin: ''
+    name: '', email: '', phone: '', github: '', linkedin: ''
 }
 
-const newEmptyEducationData = { name: '', course: '', location: '', duration: '' }
+const newEducationData = [{ name: '', course: '', location: '', duration: '' }]
 
-const newExperienceData = { name: '', role: '', time: '', desc: '' }
+const newExperienceData = [{ name: '', role: '', time: '', desc: '' }]
 
-const newProjectData = { projectName: '', time: '', desc: '' }
+const newProjectData = [{ projectName: '', time: '', desc: '' }]
 
-export { personalData, educationData, experienceData, projectData, newPersonalData, newEmptyEducationData, newExperienceData, newProjectData }
+const emptyPersonalData = {
+    name: '', email: '', phone: '', github: '', linkedin: ''
+}
+
+const emptyEducationData = [{ name: '', course: '', location: '', duration: '' }]
+
+const emptyExperienceData = [{ name: '', role: '', time: '', desc: '' }]
+
+const emptyProjectData = [{ projectName: '', time: '', desc: '' }]
+
+
+export { personalData, educationData, experienceData, projectData, newPersonalData, newEducationData, newExperienceData, newProjectData, emptyProjectData, emptyExperienceData, emptyEducationData, emptyPersonalData }
