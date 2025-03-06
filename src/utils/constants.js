@@ -20,4 +20,14 @@ const projectData = [
     { projectName: 'Weatherly', time: 'Nov 2024', desc: ' real-time weather web App to display live weather data' }
 ]
 
-export { personalData, educationData, experienceData, projectData }
+const newPersonalData = {
+    name: '', email: '', phone: '+91 ', github: '', linkedin: ''
+}
+
+const newEmptyEducationData = { name: '', course: '', location: '', duration: '' }
+
+const newExperienceData = { name: '', role: '', time: '', desc: '' }
+
+const newProjectData = { projectName: '', time: '', desc: '' }
+
+export { personalData, educationData, experienceData, projectData, newPersonalData, newEmptyEducationData, newExperienceData, newProjectData }
