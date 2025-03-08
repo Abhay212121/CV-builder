@@ -43,7 +43,7 @@ function ResumeData({
             return (
               <div className="p-2" key={data.name}>
                 <div className="font-display my-0.5 flex justify-between text-xl font-black">
-                  <span>{data.name}</span>
+                  <span>{data.collegeName}</span>
                   <span>{data.location}</span>
                 </div>
                 <div className="font-body flex justify-between text-lg">
@@ -61,7 +61,7 @@ function ResumeData({
           <hr />
           {experienceData.map((data) => {
             return (
-              <div className="p-2" key={data.name}>
+              <div className="p-2" key={data.companyName}>
                 <div className="font-display mt-0.5 flex justify-between text-xl">
                   <span className="font-black">{data.role}</span>
                   <span className="font-body text-lg">{data.time}</span>

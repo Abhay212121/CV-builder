@@ -3,13 +3,13 @@ const personalData = {
 }
 
 const educationData = [
-    { name: 'MGM College of Engineering and Technology (AKTU University)', course: 'Bachelor of Technology in Computer Science ', location: 'Noida, UP', duration: '2021 - 2025' },
+    { collegeName: 'MGM College of Engineering and Technology (AKTU University)', course: 'Bachelor of Technology in Computer Science ', location: 'Noida, UP', duration: '2021 - 2025' },
 
-    { name: 'St. Columbus School', course: 'High School', location: 'Faridabad, HR', duration: '2009 - 2021' }
+    { collegeName: 'St. Columbus School', course: 'High School', location: 'Faridabad, HR', duration: '2009 - 2021' }
 ]
 
 const experienceData = [
-    { name: 'Digital Supreme', role: 'Software Engineering Intern', time: 'Jul 2024 - Aug 2024', desc: 'Developed and deployed their website from scratch with the help of my team' }
+    { companyName: 'Digital Supreme', role: 'Software Engineering Intern', time: 'Jul 2024 - Aug 2024', desc: 'Developed and deployed their website from scratch with the help of my team' }
 ]
 
 const projectData = [
@@ -24,9 +24,9 @@ const newPersonalData = {
     name: '', email: '', phone: '', github: '', linkedin: ''
 }
 
-const newEducationData = [{ name: '', course: '', location: '', duration: '' }]
+const newEducationData = [{ collegeName: '', course: '', location: '', duration: '' }]
 
-const newExperienceData = [{ name: '', role: '', time: '', desc: '' }]
+const newExperienceData = [{ companyName: '', role: '', time: '', desc: '' }]
 
 const newProjectData = [{ projectName: '', time: '', desc: '' }]
 
@@ -34,9 +34,9 @@ const emptyPersonalData = {
     name: '', email: '', phone: '', github: '', linkedin: ''
 }
 
-const emptyEducationData = { name: '', course: '', location: '', duration: '' }
+const emptyEducationData = { collegeName: '', course: '', location: '', duration: '' }
 
-const emptyExperienceData = { name: '', role: '', time: '', desc: '' }
+const emptyExperienceData = { companyName: '', role: '', time: '', desc: '' }
 
 const emptyProjectData = { projectName: '', time: '', desc: '' }
 
