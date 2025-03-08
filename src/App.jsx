@@ -1,7 +1,7 @@
 import "./App.css";
 import ResumeData from "./components/Resumedata";
 import Sidebar from "./components/Sidebar";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   personalData,
   educationData,
@@ -18,6 +18,8 @@ function App() {
 
   const [projectInfo, setProjectInfo] = useState(projectData);
 
+  const printRef = useRef(null);
+
   return (
     <div className="flex font-mono">
       <Sidebar
@@ -29,12 +31,14 @@ function App() {
         setExperienceData={setExperienceInfo}
         projectData={projectInfo}
         setProjectData={setProjectInfo}
+        printRef={printRef}
       />
       <ResumeData
         personalData={PersonalInfo}
         educationData={educationInfo}
         experienceData={experienceInfo}
         projectData={projectInfo}
+        ref={printRef}
       />
     </div>
   );

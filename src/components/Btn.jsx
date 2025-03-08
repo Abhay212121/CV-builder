@@ -1,8 +1,10 @@
-function Btn({ btnText, doFunc }) {
+function Btn({ btnText, sectionHeading, doFunc }) {
   return (
     <button
       className="rounded-lg border-2 px-3 py-1 hover:cursor-pointer"
-      onClick={doFunc}
+      onClick={() => {
+        doFunc(sectionHeading);
+      }}
     >
       {btnText}
     </button>

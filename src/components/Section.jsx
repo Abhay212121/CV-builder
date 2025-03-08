@@ -1,11 +1,11 @@
 import Icon from "@mdi/react";
 import { mdiChevronDown, mdiCloseCircleOutline } from "@mdi/js";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Btn } from "./Btn";
 import {
-  newEducationData,
-  newExperienceData,
-  newProjectData,
+  emptyEducationData,
+  emptyExperienceData,
+  emptyProjectData,
 } from "../utils/constants";
 
 export default function Section({
@@ -15,21 +15,43 @@ export default function Section({
 }) {
   const [isActive, setIsActive] = useState(false);
 
-  function handleChange(obj) {
+  function handleRemoveSection(obj) {
     setSectionFormData((prev) => prev.filter((item) => item != obj));
+  }
+
+  // const handleInputChange = useCallback((e, data, dataKey, index) => {
+  //   let newArr = [...sectionFormData];
+  //   let newObj = { ...data };
+  //   newObj[dataKey] = e.target.value;
+  //   newArr[index] = newObj;
+  //   setSectionFormData(newArr);
+  // }, [sectionFormData]);
+
+  function handleInputChange(e, data, dataKey, index) {
+    let newArr = [...sectionFormData];
+    let newObj = { ...data };
+    newObj[dataKey] = e.target.value;
+    newArr[index] = newObj;
+    setSectionFormData(newArr);
   }
 
   function handleAddMore(heading) {
     if (heading === "Education") {
-      setSectionFormData((prev) => prev.push(newEducationData));
+      let tempArr = [...sectionFormData];
+      tempArr.push(emptyEducationData);
+      setSectionFormData(tempArr);
     }
 
     if (heading === "Experience") {
-      setSectionFormData((prev) => prev.push(newExperienceData));
+      setSectionFormData((prev) => {
+        let tempArr = [...prev];
+        tempArr.push(emptyExperienceData);
+        return tempArr;
+      });
     }
 
     if (heading === "Projects") {
-      setSectionFormData((prev) => prev.push(newProjectData));
+      setSectionFormData((prev) => prev.push(emptyProjectData));
     }
   }
 
@@ -48,7 +70,6 @@ export default function Section({
       </div>
       {isActive && (
         <div className="flex flex-col items-start text-xl">
-          {console.log(sectionFormData)}
           {sectionFormData.map((data, index) => {
             return (
               <div
@@ -57,7 +78,7 @@ export default function Section({
               >
                 <button
                   className="float-right my-1 text-red-500 hover:cursor-pointer"
-                  onClick={() => handleChange(data)}
+                  onClick={() => handleRemoveSection(data)}
                 >
                   <Icon path={mdiCloseCircleOutline} size={1} />
                 </button>
@@ -74,13 +95,9 @@ export default function Section({
                         className="rounded-md border-2 border-black p-1 text-lg"
                         type="text"
                         value={data[dataKey]}
-                        key={"data" + dataKey}
+                        key={"data" + data}
                         onChange={(e) => {
-                          let newArr = [...sectionFormData];
-                          let newObj = { ...data };
-                          newObj[dataKey] = e.target.value;
-                          newArr[index] = newObj;
-                          setSectionFormData(newArr);
+                          handleInputChange(e, data, dataKey, index);
                         }}
                       />
                     </div>
@@ -92,7 +109,7 @@ export default function Section({
           <div className="m-auto pb-8 text-blue-700">
             <Btn
               btnText={"Add more"}
-              heading={sectionHeading}
+              sectionHeading={sectionHeading}
               doFunc={handleAddMore}
             />
           </div>

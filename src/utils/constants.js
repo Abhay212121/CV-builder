@@ -34,11 +34,11 @@ const emptyPersonalData = {
     name: '', email: '', phone: '', github: '', linkedin: ''
 }
 
-const emptyEducationData = [{ name: '', course: '', location: '', duration: '' }]
+const emptyEducationData = { name: '', course: '', location: '', duration: '' }
 
-const emptyExperienceData = [{ name: '', role: '', time: '', desc: '' }]
+const emptyExperienceData = { name: '', role: '', time: '', desc: '' }
 
-const emptyProjectData = [{ projectName: '', time: '', desc: '' }]
+const emptyProjectData = { projectName: '', time: '', desc: '' }
 
 
 export { personalData, educationData, experienceData, projectData, newPersonalData, newEducationData, newExperienceData, newProjectData, emptyProjectData, emptyExperienceData, emptyEducationData, emptyPersonalData }

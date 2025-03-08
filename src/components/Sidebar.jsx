@@ -11,6 +11,9 @@ import {
   personalData as dummyPersonalData,
   experienceData as dummyExperienceData,
 } from "../utils/constants";
+import React from "react";
+import html2canvas from "html2canvas-pro";
+import jsPDF from "jspdf";
 
 function Sidebar({
   personalData,
@@ -21,6 +24,7 @@ function Sidebar({
   setExperienceData,
   projectData,
   setProjectData,
+  printRef,
 }) {
   function handleNewCV() {
     setPersonalData(newPersonalData),
@@ -36,12 +40,37 @@ function Sidebar({
       setProjectData(dummyProjectData);
   }
 
+  async function handleDownloadCV() {
+    const element = printRef.current;
+    if (!element) {
+      return;
+    }
+
+    const canvas = await html2canvas(element);
+    const data = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "in",
+      format: "a4",
+    });
+
+    const imgProperties = pdf.getImageProperties(data);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    // const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("resume.pdf");
+  }
+
   return (
     <div className="flex min-h-180 w-1/3 flex-col items-center gap-6 bg-gray-200 px-12 py-12">
       <h2 className="text-4xl text-red-800 underline">Build your Resume!</h2>
-      <div className="flex w-2/3 place-content-evenly text-xl text-red-900">
+      <div className="flex w-4/5 place-content-evenly text-xl text-red-900">
         <Btn btnText={"New CV"} doFunc={handleNewCV} />
         <Btn btnText={"Sample CV"} doFunc={handleLoadCV} />
+        <Btn btnText={"Download CV"} doFunc={handleDownloadCV} />
       </div>
       <Personalsection
         sectionHeading={"Personal Information"}

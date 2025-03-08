@@ -3,10 +3,14 @@ function ResumeData({
   educationData,
   experienceData,
   projectData,
+  ref,
 }) {
   return (
     <div className="font-body w-2/3 bg-gray-200">
-      <div className="m-auto my-15 min-h-screen w-2/3 bg-white px-15 py-10">
+      <div
+        ref={ref}
+        className="m-auto my-15 min-h-screen w-2/3 bg-white px-15 py-10"
+      >
         {/* Personal info */}
         <div className="flex flex-col items-center">
           <h1 className="font-display text-center text-4xl font-black">
@@ -32,9 +36,9 @@ function ResumeData({
 
         {/* Education info */}
         <div className="mt-5">
-          <h2 className="font-display text-2xl font-black">Education</h2>
-          <hr />
-
+          <h2 className="font-display border-b-2 pb-1 text-2xl font-black">
+            Education
+          </h2>
           {educationData.map((data) => {
             return (
               <div className="p-2" key={data.name}>
