@@ -41,7 +41,7 @@ function ResumeData({
           </h2>
           {educationData.map((data) => {
             return (
-              <div className="p-2" key={data.name}>
+              <div className="p-2" key={data.collegeName}>
                 <div className="font-display my-0.5 flex justify-between text-xl font-black">
                   <span>{data.collegeName}</span>
                   <span>{data.location}</span>
@@ -69,9 +69,10 @@ function ResumeData({
                 <div className="font-display flex justify-between text-lg font-black underline">
                   <span>{data.name}</span>
                 </div>
-                <div className="font-body flex justify-between text-lg">
-                  {/* need to add some code here. */}
-                  <li>{data.desc}</li>
+                <div className="font-body flex flex-col justify-between text-lg">
+                  {data.desc.map((description) => {
+                    return <li>{description}</li>;
+                  })}
                 </div>
               </div>
             );
@@ -89,9 +90,10 @@ function ResumeData({
                   <span className="font-black">{data.projectName}</span>
                   <span className="font-body text-lg">{data.time}</span>
                 </div>
-                <div className="font-body flex justify-between text-lg">
-                  {/*need to add some code here. */}
-                  <li>{data.desc}</li>
+                <div className="font-body flex flex-col justify-between text-lg">
+                  {data.desc.map((description) => {
+                    return <li>{description}</li>;
+                  })}
                 </div>
               </div>
             );

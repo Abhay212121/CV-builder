@@ -9,15 +9,15 @@ const educationData = [
 ]
 
 const experienceData = [
-    { companyName: 'Digital Supreme', role: 'Software Engineering Intern', time: 'Jul 2024 - Aug 2024', desc: 'Developed and deployed their website from scratch with the help of my team' }
+    { companyName: 'Digital Supreme', role: 'Software Engineering Intern', time: 'Jul 2024 - Aug 2024', desc: ['Developed and deployed their website from scratch with the help of my team'] }
 ]
 
 const projectData = [
-    { projectName: 'CV builder', time: 'Jan 2025', desc: 'A website to easily make you CV / Resume' },
+    { projectName: 'CV builder', time: 'Jan 2025', desc: ['A website to easily make you CV / Resume'] },
 
-    { projectName: 'Procrastinot', time: 'Dec 2024', desc: 'A simple and intuitive web app to create, organize, and manage your daily tasks' },
+    { projectName: 'Procrastinot', time: 'Dec 2024', desc: ['A simple and intuitive web app to create, organize, and manage your daily tasks'] },
 
-    { projectName: 'Weatherly', time: 'Nov 2024', desc: ' real-time weather web App to display live weather data' }
+    { projectName: 'Weatherly', time: 'Nov 2024', desc: [' real-time weather web App to display live weather data'] }
 ]
 
 const newPersonalData = {
@@ -26,9 +26,9 @@ const newPersonalData = {
 
 const newEducationData = [{ collegeName: '', course: '', location: '', duration: '' }]
 
-const newExperienceData = [{ companyName: '', role: '', time: '', desc: '' }]
+const newExperienceData = [{ companyName: '', role: '', time: '', desc: [''] }]
 
-const newProjectData = [{ projectName: '', time: '', desc: '' }]
+const newProjectData = [{ projectName: '', time: '', desc: [''] }]
 
 const emptyPersonalData = {
     name: '', email: '', phone: '', github: '', linkedin: ''
@@ -36,9 +36,9 @@ const emptyPersonalData = {
 
 const emptyEducationData = { collegeName: '', course: '', location: '', duration: '' }
 
-const emptyExperienceData = { companyName: '', role: '', time: '', desc: '' }
+const emptyExperienceData = { companyName: '', role: '', time: '', desc: [''] }
 
-const emptyProjectData = { projectName: '', time: '', desc: '' }
+const emptyProjectData = { projectName: '', time: '', desc: [''] }
 
 
 export { personalData, educationData, experienceData, projectData, newPersonalData, newEducationData, newExperienceData, newProjectData, emptyProjectData, emptyExperienceData, emptyEducationData, emptyPersonalData }
