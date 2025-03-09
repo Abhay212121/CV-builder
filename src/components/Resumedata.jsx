@@ -67,7 +67,7 @@ function ResumeData({
                   <span className="font-body text-lg">{data.time}</span>
                 </div>
                 <div className="font-display flex justify-between text-lg font-black underline">
-                  <span>{data.name}</span>
+                  <span>{data.companyName}</span>
                 </div>
                 <div className="font-body flex flex-col justify-between text-lg">
                   {data.desc.map((description) => {
