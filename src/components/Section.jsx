@@ -76,7 +76,7 @@ export default function Section({
   }
 
   return (
-    <div className="w-4/5 rounded-xl border-3 px-3 py-1">
+    <div className="w-full rounded-xl border-3 px-3 py-1">
       <div className="flex w-full justify-between">
         <div className="text-xl underline">{sectionHeading}</div>
         <button

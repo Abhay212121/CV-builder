@@ -9,7 +9,7 @@ export default function Personalsection({
 }) {
   const [isActive, setIsActive] = useState(false);
   return (
-    <div className="w-4/5 rounded-xl border-3 px-3 py-1">
+    <div className="mx-5 w-full rounded-xl border-3 px-3 py-1">
       <div className="flex w-full justify-between">
         <div className="text-xl underline">{sectionHeading}</div>
         <button

@@ -6,10 +6,10 @@ function ResumeData({
   ref,
 }) {
   return (
-    <div className="font-body w-2/3 bg-gray-200">
+    <div className="font-body bg-gray-200 xl:w-6/10 2xl:w-7/10">
       <div
         ref={ref}
-        className="m-auto my-15 min-h-screen w-2/3 bg-white px-15 py-10"
+        className="m-8 my-15 h-fit min-h-screen w-fit bg-white px-15 py-10 2xl:m-auto"
       >
         {/* Personal info */}
         <div className="flex flex-col items-center">

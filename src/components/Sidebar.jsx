@@ -57,7 +57,6 @@ function Sidebar({
 
     const imgProperties = pdf.getImageProperties(data);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    // const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
     const pdfHeight = pdf.internal.pageSize.getHeight();
 
     pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
@@ -65,9 +64,9 @@ function Sidebar({
   }
 
   return (
-    <div className="flex min-h-180 w-1/3 flex-col items-center gap-6 bg-gray-200 px-12 py-12">
+    <div className="flex min-h-180 flex-col items-center gap-6 bg-gray-200 px-6 py-12 xl:w-4/10 2xl:w-3/10">
       <h2 className="text-4xl text-red-800 underline">Build your Resume!</h2>
-      <div className="flex w-4/5 place-content-evenly text-xl text-red-900">
+      <div className="flex justify-around text-xl text-red-900 2xl:w-4/5">
         <Btn btnText={"New CV"} doFunc={handleNewCV} />
         <Btn btnText={"Sample CV"} doFunc={handleLoadCV} />
         <Btn btnText={"Download CV"} doFunc={handleDownloadCV} />
